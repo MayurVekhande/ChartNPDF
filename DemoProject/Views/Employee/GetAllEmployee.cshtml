@@ -1,0 +1,48 @@
+﻿@model IEnumerable<DemoProject.Models.Employee>
+<head>
+ 
+    <link href="~/Content/Table.css" rel="stylesheet" />
+</head>
+<p>
+    @Html.ActionLink("Print", "Print")
+</p>
+
+
+<div id="chart_container">    
+    <img src="~/Images/Chart.png" width="350" height="350"/>
+</div>
+
+<table class="table">
+    <tr class="tr">
+        <th class="th">
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th class="th">
+            @Html.DisplayNameFor(model => model.Department)
+        </th>
+        <th class="th">
+            @Html.DisplayNameFor(model => model.DateOfBirth)
+        </th>
+        <th class="th">
+            @Html.DisplayNameFor(model => model.City)
+        </th>        
+    </tr>
+
+@foreach (var item in Model) {
+    <tr class="tr">
+        <td class="td">
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td class="td">
+            @Html.DisplayFor(modelItem => item.Department)
+        </td>
+        <td class="td">
+            @Html.DisplayFor(modelItem => item.DateOfBirth)
+        </td>
+        <td class="td">
+            @Html.DisplayFor(modelItem => item.City)
+        </td>        
+    </tr>
+}
+
+</table>

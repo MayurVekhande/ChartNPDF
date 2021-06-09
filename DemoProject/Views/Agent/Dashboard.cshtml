@@ -1,0 +1,81 @@
+﻿
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="~/Scripts/jquery-3.6.0.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/Chart.min.js"></script>
+    <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/Content/Dashboard.css" rel="stylesheet" />
+</head>
+<body>
+    <h2>Agents Sales Charts</h2>
+    <button>@Html.ActionLink("GeneratePDF", "PrintPDF")</button>
+    <div id="pad">
+
+        <h3>Line Chart</h3>       
+        <div id="chart_container">
+            <canvas id="line_chart"></canvas>
+        </div>               
+
+        <h3>Bar Chart</h3>
+        <div id="chart_container">
+            <canvas id="radar_chart"></canvas>
+        </div>
+        
+    </div>
+
+    <script>
+        var sales =@Html.Raw(Json.Encode(ViewBag.SALES));
+        var agent =@Html.Raw(Json.Encode(ViewBag.AGENTS));
+        var ctx = $("#line_chart");
+        var lineChart = new Chart(ctx, {
+            type: "line",
+            data: {
+                labels: agent,
+                datasets: [{
+                    label: "Sales Record for Year 2021",
+                    data: sales,
+                    backgroundColor: ["#ffccff"],
+                    borderColor: [ "#ff4d88"],
+                    borderWidth:1
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                scales: { xAxes: [{ ticks: { beginAtZero: true } }] },
+                legend: { display: false }
+                
+            },
+        });
+
+    </script>
+
+    <script>
+            var sales =@Html.Raw(Json.Encode(ViewBag.SALES));
+            var agent =@Html.Raw(Json.Encode(ViewBag.AGENTS));
+            var ctx = $("#radar_chart");
+            var barChart = new Chart(ctx, {
+
+                type: "bar",
+                data: {
+                    labels: agent,
+                    datasets: [{
+                        label: "Sales Record for Year 2021",
+                        data: sales,
+                        backgroundColor: ["#ffcc66", "#99ff99", "#99ccff","#ff99cc"],
+                        borderColor: ["#ffaa00", "#00e600", "#4da6ff", "#ff1aff"],
+                        borderWidth:2
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    scales: { xAxes: [{ ticks: { beginAtZero: true } }] },
+                    legend: { display: false }
+                   
+                },
+            });
+        </script>   
+</body>
+</html>
+
+

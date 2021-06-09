@@ -1,0 +1,30 @@
+﻿.table {    
+    border-collapse: collapse;
+    padding :20px;
+
+}
+/* Zebra striping */
+.tr:nth-of-type(odd) {
+    background: #eee;
+}
+
+.th {
+    background: #333;
+    color: white;
+    font-weight: bold;
+}
+
+.td, .th {
+    padding: 8px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+
+#chart_container {
+    width: 400px;
+    height: 400px;
+    border: 1px solid #0173c6;
+    padding: 20px;
+    border-radius: 4px;  
+}

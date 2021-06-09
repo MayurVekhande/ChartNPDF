@@ -1,0 +1,42 @@
+﻿#chart_container {
+    width: 400px;
+    height: 400px;
+    border: 1px solid #0173c6;
+    padding-top: 20px;
+    padding: 20px;
+    border-radius: 4px;
+    font-size: xx-small;
+}
+#img_container {
+
+    width: 400px;
+    height: 400px;
+    border: 1px solid #0173c6;
+    padding-top: 20px;
+    padding: 20px;
+    border-radius: 4px;
+    font-size: xx-small;
+}
+
+
+#line_chart {
+    display:none;
+}
+
+#radar_chart {
+    font-size: xx-small;
+}
+
+#pad {
+    padding-top: 20px;
+}
+
+#coolimg {
+    width: 400px;
+    height: 400px;
+    border: 1px solid #0173c6;   
+    padding: 40px;
+    border-radius: 4px;
+    font-size: xx-small;
+}
+
